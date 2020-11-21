@@ -1,31 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import GalleryItem from "../GalleryItem";
+import { GalleryItemShape } from "../../utils/commonPropTypes";
 import "./Gallery.css";
 
 const Gallery = ({ items }) => {
   return (
-    <article>
-      {items?.map((item) => {
-        return (
-          <img src={item.download_url} key={item.id} width={500} height={500} />
-        );
-      })}
+    <article className="gallery">
+      {items?.map((item) => (
+        <GalleryItem item={item} key={item.id} />
+      ))}
     </article>
   );
 };
 
 Gallery.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      author: PropTypes.string,
-      download_url: PropTypes.string,
-      url: PropTypes.string,
-      height: PropTypes.number,
-      width: PropTypes.number,
-    })
-  ),
+  items: PropTypes.arrayOf(GalleryItemShape),
 };
 
 export default Gallery;
