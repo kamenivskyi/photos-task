@@ -1,4 +1,4 @@
-const API_BASE = "https://picsum.photos/";
+const API_BASE = "https://picsum.photos";
 
 export const getData = async (url) => {
   const fullUrl = API_BASE + url;

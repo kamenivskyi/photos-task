@@ -1,15 +1,20 @@
 import React from "react";
+import Gallery from "../../components/Gallery";
+import { useAsyncData } from "../../hooks/useAsyncData";
+
+import "./Home.css";
 
 const Home = () => {
+  const { data, status } = useAsyncData("/v2/list?page=2&limit=10");
+
+  console.log(data);
   return (
-    <div>
+    <main>
       <div className="container">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat minus
-        natus officia quos consequuntur ipsum modi earum, dicta dolor vero
-        sapiente numquam veniam sunt labore quidem quas delectus optio!
-        Consequuntur!
+        {status === "pending" && <p>Loading..</p>}
+        {status === "success" && <Gallery items={data} />}
       </div>
-    </div>
+    </main>
   );
 };
 
