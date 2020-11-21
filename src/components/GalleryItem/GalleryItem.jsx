@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { GalleryItemShape } from "../../utils/commonPropTypes";
 
 import "./GalleryItem.css";
 
-const GalleryItem = ({ item: { download_url } }) => {
+const GalleryItem = ({ item: { download_url, id } }) => {
   return (
     <article className="gallery__item">
-      <img className="gallery__image" src={download_url} alt="" />
+      <Link to={`/photo/${id}`}>
+        <img className="gallery__image" src={download_url} alt="" />
+      </Link>
     </article>
   );
 };

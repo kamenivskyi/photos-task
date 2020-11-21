@@ -1,10 +1,10 @@
 import { Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
+import PhotoPage from "./pages/PhotoPage";
 
-export const Routes = () => {
-  return (
-    <Switch>
-      <Route path="/" component={Home} exact />
-    </Switch>
-  );
-};
+export const Routes = () => (
+  <Switch>
+    <Route path="/" component={HomePage} exact />
+    <Route path="/photo/:id" component={PhotoPage} exact />
+  </Switch>
+);

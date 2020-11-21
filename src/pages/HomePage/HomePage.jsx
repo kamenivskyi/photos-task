@@ -4,7 +4,7 @@ import { useAsyncData } from "../../hooks/useAsyncData";
 
 import "./Home.css";
 
-const Home = () => {
+const HomePage = () => {
   const { data, status } = useAsyncData("/v2/list?page=2&limit=10");
 
   console.log(data);
@@ -18,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
