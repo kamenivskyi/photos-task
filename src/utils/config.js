@@ -10,3 +10,8 @@ export const paginationPage = {
   previous: "previous",
   next: "next",
 };
+
+export const storageTypes = {
+  local: "localStorage",
+  session: "sessionStorage",
+};

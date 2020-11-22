@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useStorage } from "../hooks";
 
 import PhotosContext from "./photosContext";
 
 const PhotosState = ({ children }) => {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useStorage({
+    key: "photos-app-favorites",
+    initialValue: [],
+  });
 
   const handleAddToFavorites = (photoObj) => {
     const isNotUnique = favorites.find((item) => item.id === photoObj.id);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CustomeButton from "../../components/CustomeButton";
+import CustomButton from "../../components/CustomButton";
 import Gallery from "../../components/Gallery";
 import Pagination from "../../components/Pagination";
-import { useAsyncData } from "../../hooks/useAsyncData";
+import { useAsyncData } from "../../hooks";
 import { fetchStatus, paginationPage } from "../../utils/config";
 
 import "./Home.css";
@@ -48,6 +48,7 @@ const HomePage = () => {
   return (
     <main>
       <div className="container">
+        <h1 className="page-title">Home page</h1>
         {hasData && (
           <>
             <div className="filters">
@@ -70,9 +71,9 @@ const HomePage = () => {
           <>
             <p className="warning-message">Photos not found!</p>
             {page !== 1 && (
-              <CustomeButton onClick={() => setPage(1)}>
+              <CustomButton onClick={() => setPage(1)}>
                 Back to the first page
-              </CustomeButton>
+              </CustomButton>
             )}
           </>
         )}

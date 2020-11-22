@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import photosContext from "../../context/photosContext";
 
 import { GalleryItemShape } from "../../utils/commonPropTypes";
-import CustomeButton from "../CustomeButton";
+import CustomButton from "../CustomButton";
 
 import "./GalleryItem.css";
 
@@ -17,13 +17,13 @@ const GalleryItem = ({ item: { download_url, id } }) => {
       <Link to={`/photo/${id}`}>
         <img className="gallery__image" src={download_url} alt="" />
         {isFavoritesPage && (
-          <CustomeButton
+          <CustomButton
             variant="primary"
             className="gallery__item-remove"
             onClick={(e) => handleRemoveFromFavorites(e, id)}
           >
             Remove
-          </CustomeButton>
+          </CustomButton>
         )}
       </Link>
     </article>

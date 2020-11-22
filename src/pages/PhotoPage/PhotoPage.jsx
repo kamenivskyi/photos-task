@@ -4,16 +4,14 @@ import { useParams } from "react-router-dom";
 import photosContext from "../../context/photosContext";
 import { useAsyncData } from "../../hooks/useAsyncData";
 import { fetchStatus } from "../../utils/config";
-import CustomeButton from "../../components/CustomeButton";
+import CustomButton from "../../components/CustomButton";
 
 import "./PhotoPage.css";
 
 const PhotoPage = () => {
   const { id } = useParams();
   const { data, status } = useAsyncData(`/id/${id}/info`);
-  const { handleAddToFavorites, favorites } = useContext(photosContext);
-
-  console.log(favorites);
+  const { handleAddToFavorites } = useContext(photosContext);
 
   if (!data) {
     return null;
@@ -41,12 +39,9 @@ const PhotoPage = () => {
                   <p className="photo-page__size-item">height: {height}</p>
                 )}
               </p>
-              <CustomeButton
-                className="bas"
-                onClick={() => handleAddToFavorites(data)}
-              >
+              <CustomButton onClick={() => handleAddToFavorites(data)}>
                 Add to the favorites
-              </CustomeButton>
+              </CustomButton>
             </div>
           </>
         )}

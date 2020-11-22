@@ -2,15 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import "./CustomeButton.css";
+import "./CustomButton.css";
 
-const CustomeButton = ({
-  children,
-  type,
-  className,
-  variant,
-  ...restProps
-}) => {
+const CustomButton = ({ children, type, className, variant, ...restProps }) => {
   return (
     <button
       type={type}
@@ -29,7 +23,7 @@ const CustomeButton = ({
   );
 };
 
-CustomeButton.propTypes = {
+CustomButton.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -38,10 +32,10 @@ CustomeButton.propTypes = {
   type: PropTypes.string,
 };
 
-CustomeButton.defaultProps = {
+CustomButton.defaultProps = {
   type: "button",
   children: "button",
   variant: "dark",
 };
 
-export default CustomeButton;
+export default CustomButton;

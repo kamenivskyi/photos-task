@@ -1,23 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CustomeButton from "../CustomeButton";
+import CustomButton from "../CustomButton";
 import { paginationPage } from "../../utils/config";
 import "./Pagination.css";
 
 const Pagination = ({ onPageChange, currentPage }) => {
   return (
     <div className="pagination">
-      <CustomeButton onClick={onPageChange(paginationPage.first)}>
+      <CustomButton onClick={onPageChange(paginationPage.first)}>
         Back to first
-      </CustomeButton>
-      <CustomeButton onClick={onPageChange(paginationPage.previous)}>
+      </CustomButton>
+      <CustomButton onClick={onPageChange(paginationPage.previous)}>
         Previous
-      </CustomeButton>
+      </CustomButton>
       <span className="pagination__current-page">Page: {currentPage}</span>
-      <CustomeButton onClick={onPageChange(paginationPage.next)}>
+      <CustomButton onClick={onPageChange(paginationPage.next)}>
         Next
-      </CustomeButton>
+      </CustomButton>
     </div>
   );
 };
