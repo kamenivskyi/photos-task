@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import { getData } from "../api/getData";
+import { fetchStatus } from "../utils/config";
 
 export const useAsyncData = (url) => {
   const [data, setData] = useState(null);
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState(fetchStatus.initial);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setStatus("pending");
+        setStatus(fetchStatus.pending);
         const data = await getData(url);
         setData(data);
-        setStatus("success");
+        setStatus(fetchStatus.success);
       } catch (error) {
-        setStatus("failed");
+        setStatus(fetchStatus.failed);
         setData(null);
       }
     };

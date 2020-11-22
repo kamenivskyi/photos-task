@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useAsyncData } from "../../hooks/useAsyncData";
+import { fetchStatus } from "../../utils/config";
 
 import "./PhotoPage.css";
 
@@ -19,8 +20,8 @@ const PhotoPage = () => {
   return (
     <article className="photo-page">
       <div className="container">
-        {status === "pending" && <p>Loading..</p>}
-        {status === "success" && (
+        {status === fetchStatus.pending && <p>Loading..</p>}
+        {status === fetchStatus.success && (
           <>
             <div className="photo-page__image-wrapper">
               <img className="photo-page__image" src={download_url} alt="" />
@@ -32,7 +33,7 @@ const PhotoPage = () => {
             </p>
           </>
         )}
-        {status === "failed" && <p>Something went wrong!</p>}
+        {status === fetchStatus.failed && <p>Something went wrong!</p>}
       </div>
     </article>
   );

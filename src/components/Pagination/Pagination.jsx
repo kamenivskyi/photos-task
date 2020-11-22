@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { paginationPage } from "../../utils/config";
 import "./Pagination.css";
 
 const Pagination = ({ onPageChange, currentPage }) => {
@@ -9,14 +10,14 @@ const Pagination = ({ onPageChange, currentPage }) => {
       <button
         type="button"
         className="custome-button"
-        onClick={onPageChange("first")}
+        onClick={onPageChange(paginationPage.first)}
       >
         Back to first
       </button>
       <button
         type="button"
         className="custome-button"
-        onClick={onPageChange("previous")}
+        onClick={onPageChange(paginationPage.previous)}
       >
         Previous
       </button>
@@ -24,7 +25,7 @@ const Pagination = ({ onPageChange, currentPage }) => {
       <button
         type="button"
         className="custome-button"
-        onClick={onPageChange("next")}
+        onClick={onPageChange(paginationPage.next)}
       >
         Next
       </button>

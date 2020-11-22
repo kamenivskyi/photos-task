@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Gallery from "../../components/Gallery";
 import Pagination from "../../components/Pagination";
 import { useAsyncData } from "../../hooks/useAsyncData";
+import { fetchStatus, paginationPage } from "../../utils/config";
 
 import "./Home.css";
 
@@ -14,17 +15,17 @@ const HomePage = () => {
 
   const handlePageChange = (operation) => () => {
     switch (operation) {
-      case "next": {
+      case paginationPage.next: {
         setPage((page) => page + 1);
         break;
       }
-      case "previous": {
+      case paginationPage.previous: {
         if (page > 1) {
           setPage((page) => page - 1);
         }
         break;
       }
-      case "first": {
+      case paginationPage.first: {
         if (page !== 1) {
           setPage(1);
         }
@@ -38,9 +39,9 @@ const HomePage = () => {
   };
 
   const hasData = data && data.length > 0;
-  const noData = status === "success" && data.length === 0;
-  const loading = status === "pending";
-  const error = status === "failed";
+  const noData = status === fetchStatus.success && data.length === 0;
+  const loading = status === fetchStatus.pending;
+  const error = status === fetchStatus.failed;
 
   console.log("render");
 
