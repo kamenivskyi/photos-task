@@ -28,6 +28,13 @@ a {
   border: none;
 }
 
+.page-title {
+  text-align: center;
+  font-size: 40px;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+}
+
 .custome-button {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   padding: 15px;

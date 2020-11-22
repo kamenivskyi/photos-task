@@ -1,6 +1,13 @@
 .gallery__item {
+  position: relative;
   height: 100%;
   width: 100%;
+}
+
+.gallery__item-remove {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .gallery__image {

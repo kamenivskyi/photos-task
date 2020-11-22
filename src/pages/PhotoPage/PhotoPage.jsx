@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+
+import photosContext from "../../context/photosContext";
 import { useAsyncData } from "../../hooks/useAsyncData";
 import { fetchStatus } from "../../utils/config";
 
@@ -8,6 +10,9 @@ import "./PhotoPage.css";
 const PhotoPage = () => {
   const { id } = useParams();
   const { data, status } = useAsyncData(`/id/${id}/info`);
+  const { handleAddToFavorites, favorites } = useContext(photosContext);
+
+  console.log(favorites);
 
   if (!data) {
     return null;
@@ -27,11 +32,24 @@ const PhotoPage = () => {
             <div className="photo-page__image-wrapper">
               <img className="photo-page__image" src={download_url} alt="" />
             </div>
-            <p className="photo-page__author">Author: {author}</p>
-            <p className="photo-page__size">
-              {width && <span>Width: {width}</span>}
-              {height && <span>height: {height}</span>}
-            </p>
+            <div className="photo-page__content">
+              <p className="photo-page__author">Author: {author}</p>
+              <p className="photo-page__size">
+                {width && (
+                  <p className="photo-page__size-item">Width: {width}</p>
+                )}
+                {height && (
+                  <p className="photo-page__size-item">height: {height}</p>
+                )}
+              </p>
+              <button
+                className="custome-button"
+                type="button"
+                onClick={() => handleAddToFavorites(data)}
+              >
+                Add to the favorites
+              </button>
+            </div>
           </>
         )}
         {status === failed && <p>Something went wrong!</p>}
