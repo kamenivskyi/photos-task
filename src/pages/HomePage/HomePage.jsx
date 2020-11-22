@@ -8,7 +8,7 @@ import "./Home.css";
 
 const HomePage = () => {
   const [page, setPage] = useState(1);
-  const [limitPerPage, setLimitPerPage] = useState(10);
+  const [limitPerPage, setLimitPerPage] = useState(5);
   const { data, status } = useAsyncData(
     `/v2/list?page=${page}&limit=${limitPerPage}`
   );
@@ -38,19 +38,29 @@ const HomePage = () => {
     }
   };
 
+  const { success, pending, failed } = fetchStatus;
   const hasData = data && data.length > 0;
-  const noData = status === fetchStatus.success && data.length === 0;
-  const loading = status === fetchStatus.pending;
-  const error = status === fetchStatus.failed;
-
-  console.log("render");
+  const noData = status === success && data.length === 0;
+  const loading = status === pending;
+  const error = status === failed;
 
   return (
     <main>
       <div className="container">
         {hasData && (
           <>
-            <Pagination onPageChange={handlePageChange} currentPage={page} />
+            <div className="filters">
+              <Pagination onPageChange={handlePageChange} currentPage={page} />
+              <label>
+                <span className="limit-text">Limit of photos per page: </span>
+                <input
+                  className="limit"
+                  type="number"
+                  value={limitPerPage}
+                  onChange={(e) => setLimitPerPage(e.target.value)}
+                />
+              </label>
+            </div>
             <Gallery items={data} />
           </>
         )}

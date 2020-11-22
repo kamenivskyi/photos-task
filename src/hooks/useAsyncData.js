@@ -10,6 +10,7 @@ export const useAsyncData = (url) => {
     const fetchData = async () => {
       try {
         setStatus(fetchStatus.pending);
+        setData(null);
         const data = await getData(url);
         setData(data);
         setStatus(fetchStatus.success);

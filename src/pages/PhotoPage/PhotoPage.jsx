@@ -14,14 +14,15 @@ const PhotoPage = () => {
   }
 
   const { download_url, author, width, height } = data;
+  const { pending, success, failed } = fetchStatus;
 
   console.log(status);
 
   return (
     <article className="photo-page">
       <div className="container">
-        {status === fetchStatus.pending && <p>Loading..</p>}
-        {status === fetchStatus.success && (
+        {status === pending && <p>Loading..</p>}
+        {status === success && (
           <>
             <div className="photo-page__image-wrapper">
               <img className="photo-page__image" src={download_url} alt="" />
@@ -33,7 +34,7 @@ const PhotoPage = () => {
             </p>
           </>
         )}
-        {status === fetchStatus.failed && <p>Something went wrong!</p>}
+        {status === failed && <p>Something went wrong!</p>}
       </div>
     </article>
   );

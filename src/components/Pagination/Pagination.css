@@ -1,4 +1,8 @@
-.pagination__page {
-  margin: 0 10px;
+.pagination {
+  margin-right: 20px;
+}
+
+.pagination__current-page {
   letter-spacing: 1.4px;
+  margin: 0 10px;
 }

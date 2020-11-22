@@ -21,7 +21,7 @@ const Pagination = ({ onPageChange, currentPage }) => {
       >
         Previous
       </button>
-      <span className="pagination__page">Page: {currentPage}</span>
+      <span className="pagination__current-page">Page: {currentPage}</span>
       <button
         type="button"
         className="custome-button"
