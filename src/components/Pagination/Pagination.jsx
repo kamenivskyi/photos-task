@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import CustomeButton from "../CustomeButton";
 import { paginationPage } from "../../utils/config";
 import "./Pagination.css";
-import CustomeButton from "../CustomeButton";
 
 const Pagination = ({ onPageChange, currentPage }) => {
   return (

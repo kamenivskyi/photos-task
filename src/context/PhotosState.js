@@ -9,10 +9,17 @@ const PhotosState = ({ children }) => {
     setFavorites([...favorites, photoObj]);
   };
 
+  const handleRemoveFromFavorites = (e, id) => {
+    e.preventDefault();
+    const updatedFavorites = favorites.filter((item) => item.id !== id);
+    setFavorites(updatedFavorites);
+  };
+
   return (
     <PhotosContext.Provider
       value={{
         handleAddToFavorites,
+        handleRemoveFromFavorites,
         favorites,
       }}
     >
