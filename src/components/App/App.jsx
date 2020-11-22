@@ -6,15 +6,13 @@ import PhotosState from "../../context/PhotosState";
 import "reset-css/reset.css";
 import "./styles.css";
 
-const App = () => {
-  return (
-    <PhotosState>
-      <div className="App">
-        <Header />
-        <Routes />
-      </div>
-    </PhotosState>
-  );
-};
+const App = () => (
+  <PhotosState>
+    <div className="App">
+      <Header />
+      <Routes />
+    </div>
+  </PhotosState>
+);
 
 export default App;

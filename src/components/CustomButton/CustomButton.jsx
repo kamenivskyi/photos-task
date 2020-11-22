@@ -9,7 +9,7 @@ const CustomButton = ({ children, type, className, variant, ...restProps }) => {
     <button
       type={type}
       className={clsx(
-        "custome-button",
+        "custom-button",
         {
           "button-primary": variant === "primary",
           "button-dark": variant === "dark",

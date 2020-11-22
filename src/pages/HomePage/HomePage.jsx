@@ -1,43 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+
 import CustomButton from "../../components/CustomButton";
+import Filters from "../../components/Filters/Filters";
 import Gallery from "../../components/Gallery";
-import Pagination from "../../components/Pagination";
-import { useAsyncData } from "../../hooks";
-import { fetchStatus, paginationPage } from "../../utils/config";
+import photosContext from "../../context/photosContext";
+import { fetchStatus } from "../../utils/config";
 
 import "./Home.css";
 
 const HomePage = () => {
-  const [page, setPage] = useState(1);
-  const [limitPerPage, setLimitPerPage] = useState(5);
-  const { data, status } = useAsyncData(
-    `/v2/list?page=${page}&limit=${limitPerPage}`
-  );
-
-  const handlePageChange = (operation) => () => {
-    switch (operation) {
-      case paginationPage.next: {
-        setPage((page) => page + 1);
-        break;
-      }
-      case paginationPage.previous: {
-        if (page > 1) {
-          setPage((page) => page - 1);
-        }
-        break;
-      }
-      case paginationPage.first: {
-        if (page !== 1) {
-          setPage(1);
-        }
-        break;
-      }
-      default: {
-        setPage(1);
-        break;
-      }
-    }
-  };
+  const { data, status, page, setPage } = useContext(photosContext);
 
   const { success, pending, failed } = fetchStatus;
   const hasData = data && data.length > 0;
@@ -51,18 +23,7 @@ const HomePage = () => {
         <h1 className="page-title">Home page</h1>
         {hasData && (
           <>
-            <div className="filters">
-              <Pagination onPageChange={handlePageChange} currentPage={page} />
-              <label>
-                <span className="limit-text">Limit of photos per page: </span>
-                <input
-                  className="limit"
-                  type="number"
-                  value={limitPerPage}
-                  onChange={(e) => setLimitPerPage(e.target.value)}
-                />
-              </label>
-            </div>
+            <Filters />
             <Gallery items={data} />
           </>
         )}

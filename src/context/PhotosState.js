@@ -1,13 +1,44 @@
-import React from "react";
-import { useStorage } from "../hooks";
+import React, { useState } from "react";
+import { useStorage, useAsyncData } from "../hooks";
+import { paginationPage } from "../utils/config";
 
 import PhotosContext from "./photosContext";
 
 const PhotosState = ({ children }) => {
+  const [page, setPage] = useState(1);
+  const [limitPerPage, setLimitPerPage] = useState(6);
+  const { data, status } = useAsyncData(
+    `/v2/list?page=${page}&limit=${limitPerPage}`
+  );
   const [favorites, setFavorites] = useStorage({
     key: "photos-app-favorites",
     initialValue: [],
   });
+
+  const handlePageChange = (operation) => () => {
+    switch (operation) {
+      case paginationPage.next: {
+        setPage((page) => page + 1);
+        break;
+      }
+      case paginationPage.previous: {
+        if (page > 1) {
+          setPage((page) => page - 1);
+        }
+        break;
+      }
+      case paginationPage.first: {
+        if (page !== 1) {
+          setPage(1);
+        }
+        break;
+      }
+      default: {
+        setPage(1);
+        break;
+      }
+    }
+  };
 
   const handleAddToFavorites = (photoObj) => {
     const isNotUnique = favorites.find((item) => item.id === photoObj.id);
@@ -31,6 +62,12 @@ const PhotosState = ({ children }) => {
       value={{
         handleAddToFavorites,
         handleRemoveFromFavorites,
+        handlePageChange,
+        setLimitPerPage,
+        limitPerPage,
+        page,
+        data,
+        status,
         favorites,
       }}
     >

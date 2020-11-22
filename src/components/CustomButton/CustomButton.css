@@ -1,6 +1,6 @@
-.custome-button {
+.custom-button {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  padding: 15px;
+  padding: 10px 20px;
   font-size: 14px;
   text-transform: uppercase;
   background-color: var(--dark-color);
@@ -16,6 +16,6 @@
   background-color: var(--dark-color);
 }
 
-.custome-button:not(:last-child) {
+.custom-button:not(:last-child) {
   margin: 20px 10px 20px 0;
 }

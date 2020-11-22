@@ -26,19 +26,21 @@ const PhotoPage = () => {
         {status === pending && <p>Loading..</p>}
         {status === success && (
           <>
-            <div className="photo-page__image-wrapper">
-              <img className="photo-page__image" src={download_url} alt="" />
-            </div>
+            {download_url && (
+              <div className="photo-page__image-wrapper">
+                <img className="photo-page__image" src={download_url} alt="" />
+              </div>
+            )}
             <div className="photo-page__content">
-              <p className="photo-page__author">Author: {author}</p>
-              <p className="photo-page__size">
+              {author && <p className="photo-page__author">Author: {author}</p>}
+              <div className="photo-page__size">
                 {width && (
                   <p className="photo-page__size-item">Width: {width}</p>
                 )}
                 {height && (
                   <p className="photo-page__size-item">height: {height}</p>
                 )}
-              </p>
+              </div>
               <CustomButton onClick={() => handleAddToFavorites(data)}>
                 Add to the favorites
               </CustomButton>
