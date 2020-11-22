@@ -3,32 +3,21 @@ import PropTypes from "prop-types";
 
 import { paginationPage } from "../../utils/config";
 import "./Pagination.css";
+import CustomeButton from "../CustomeButton";
 
 const Pagination = ({ onPageChange, currentPage }) => {
   return (
     <div className="pagination">
-      <button
-        type="button"
-        className="custome-button"
-        onClick={onPageChange(paginationPage.first)}
-      >
+      <CustomeButton onClick={onPageChange(paginationPage.first)}>
         Back to first
-      </button>
-      <button
-        type="button"
-        className="custome-button"
-        onClick={onPageChange(paginationPage.previous)}
-      >
+      </CustomeButton>
+      <CustomeButton onClick={onPageChange(paginationPage.previous)}>
         Previous
-      </button>
+      </CustomeButton>
       <span className="pagination__current-page">Page: {currentPage}</span>
-      <button
-        type="button"
-        className="custome-button"
-        onClick={onPageChange(paginationPage.next)}
-      >
+      <CustomeButton onClick={onPageChange(paginationPage.next)}>
         Next
-      </button>
+      </CustomeButton>
     </div>
   );
 };

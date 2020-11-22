@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CustomeButton from "../../components/CustomeButton";
 import Gallery from "../../components/Gallery";
 import Pagination from "../../components/Pagination";
 import { useAsyncData } from "../../hooks/useAsyncData";
@@ -69,9 +70,9 @@ const HomePage = () => {
           <>
             <p className="warning-message">Photos not found!</p>
             {page !== 1 && (
-              <button className="custome-button" onClick={() => setPage(1)}>
+              <CustomeButton onClick={() => setPage(1)}>
                 Back to the first page
-              </button>
+              </CustomeButton>
             )}
           </>
         )}

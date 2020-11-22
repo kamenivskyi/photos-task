@@ -1,0 +1,21 @@
+.custome-button {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+}
+.button-dark {
+  background-color: var(--dark-color);
+}
+
+.custome-button:not(:last-child) {
+  margin: 20px 10px 20px 0;
+}

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import photosContext from "../../context/photosContext";
 import { useAsyncData } from "../../hooks/useAsyncData";
 import { fetchStatus } from "../../utils/config";
+import CustomeButton from "../../components/CustomeButton";
 
 import "./PhotoPage.css";
 
@@ -20,8 +21,6 @@ const PhotoPage = () => {
 
   const { download_url, author, width, height } = data;
   const { pending, success, failed } = fetchStatus;
-
-  console.log(status);
 
   return (
     <article className="photo-page">
@@ -42,13 +41,12 @@ const PhotoPage = () => {
                   <p className="photo-page__size-item">height: {height}</p>
                 )}
               </p>
-              <button
-                className="custome-button"
-                type="button"
+              <CustomeButton
+                className="bas"
                 onClick={() => handleAddToFavorites(data)}
               >
                 Add to the favorites
-              </button>
+              </CustomeButton>
             </div>
           </>
         )}
