@@ -19,3 +19,27 @@ a {
   max-width: 1300px;
   margin: 0 auto;
 }
+
+.warning-message {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+}
+
+.custome-button {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+}
+
+.custome-button:not(:last-child) {
+  margin: 20px 10px 20px 0;
+}

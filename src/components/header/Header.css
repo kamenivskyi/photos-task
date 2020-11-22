@@ -1,6 +1,6 @@
 .header {
   padding: 20px 0;
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
   margin-bottom: 20px;
 }
 .header__link {
