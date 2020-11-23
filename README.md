@@ -1,22 +1,27 @@
-# Technology stack:
+# Используемый стек технологий:
 
 - React.js(ReactHooks)
 - react-router
-- CSS
+- create-react-app
+- SCSS
 - clsx
 
-[Demo live](https://kamenivskyi.github.io/photos-task/)
+[ПОСМОТРЕТЬ ДЕМО](https://kamenivskyi.github.io/photos-task/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Для запуска локально:
 
-## Available Scripts
+Склонировать репозиторий:
 
-In the project directory, you can run:
+### `git clone repo-url`
+
+После установить необходимые зависимости:
+
+### `npm install`
+
+Запуск проекта:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Проект запустится на порте 3000:
+Если браузер не открыл проект на [http://localhost:3000](http://localhost:3000)
+сделайте это вручную
