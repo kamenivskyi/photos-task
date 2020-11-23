@@ -1,12 +1,16 @@
 import React, { useCallback, useState } from "react";
 import { useStorage, useAsyncData } from "../hooks";
-import { paginationPage } from "../utils/config";
+import {
+  DEFAULT_LIMIT_PER_PAGE,
+  DEFAULT_PAGE,
+  paginationPage,
+} from "../utils/config";
 
 import PhotosContext from "./photosContext";
 
 const PhotosState = ({ children }) => {
-  const [page, setPage] = useState(1);
-  const [limitPerPage, setLimitPerPage] = useState(6);
+  const [page, setPage] = useState(DEFAULT_PAGE);
+  const [limitPerPage, setLimitPerPage] = useState(DEFAULT_LIMIT_PER_PAGE);
   const { data, status } = useAsyncData(
     `/v2/list?page=${page}&limit=${limitPerPage}`
   );

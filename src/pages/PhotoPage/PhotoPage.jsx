@@ -24,7 +24,6 @@ const PhotoPage = () => {
   return (
     <article className="photo-page">
       <div className="container">
-        <Preloader />
         {status === pending && <Preloader />}
         {status === success && (
           <>

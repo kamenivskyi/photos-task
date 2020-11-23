@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
 import photosContext from "../../context/photosContext";
+import { DEFAULT_LIMIT_PER_PAGE } from "../../utils/config";
 import Pagination from "../Pagination";
 
 import "./Filters.scss";
@@ -27,7 +28,7 @@ const Filters = () => {
         <input
           className="limit"
           type="number"
-          defaultValue={5}
+          defaultValue={DEFAULT_LIMIT_PER_PAGE}
           onChange={(e) => debounced.callback(e.target.value)}
         />
       </label>
