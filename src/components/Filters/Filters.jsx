@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import _ from "lodash";
 
 import photosContext from "../../context/photosContext";
 import Pagination from "../Pagination";
@@ -27,7 +28,7 @@ const Filters = () => {
           className="limit"
           type="number"
           value={limitPerPage}
-          onChange={(e) => setLimitPerPage(e.target.value)}
+          onChange={(e) => setLimitPerPage(e.target.vaue)}
         />
       </label>
     </div>

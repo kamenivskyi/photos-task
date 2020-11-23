@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
 }
 
 .limit-text {
@@ -11,4 +13,10 @@
 .limit {
   padding: 10px 20px;
   max-height: 20px;
+}
+
+@media (max-width: 500px) {
+  .filters .custom-button {
+    width: 100%;
+  }
 }
