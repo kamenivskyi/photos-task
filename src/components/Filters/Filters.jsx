@@ -1,5 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
-import _ from "lodash";
+import React, { useContext } from "react";
 
 import photosContext from "../../context/photosContext";
 import Pagination from "../Pagination";
