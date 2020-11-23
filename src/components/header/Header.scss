@@ -1,0 +1,16 @@
+@import "../../scss/colors";
+
+.header {
+  padding: 20px 0;
+  background-color: $dark-color;
+  margin-bottom: 20px;
+
+  &__link {
+    color: $white-color;
+    text-transform: capitalize;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}

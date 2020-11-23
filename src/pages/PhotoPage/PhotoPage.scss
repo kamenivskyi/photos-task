@@ -1,0 +1,28 @@
+.photo-page {
+  &__image {
+    max-width: 100%;
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  &__size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__size-item,
+  &__author {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-page {
+    &__content {
+      flex-direction: column;
+    }
+  }
+}

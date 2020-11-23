@@ -3,17 +3,15 @@ import PropTypes from "prop-types";
 
 import GalleryItem from "../GalleryItem";
 import { galleryItemShape } from "../../utils/commonPropTypes";
-import "./Gallery.css";
+import "./Gallery.scss";
 
-const Gallery = ({ items }) => {
-  return (
-    <article className="gallery">
-      {items?.map((item) => (
-        <GalleryItem item={item} key={item.id} />
-      ))}
-    </article>
-  );
-};
+const Gallery = ({ items }) => (
+  <article className="gallery">
+    {items?.map((item) => (
+      <GalleryItem item={item} key={item.id} />
+    ))}
+  </article>
+);
 
 Gallery.propTypes = {
   items: PropTypes.arrayOf(galleryItemShape),

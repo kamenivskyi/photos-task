@@ -3,16 +3,18 @@
   height: 450px;
   width: 50%;
   overflow: hidden;
-}
 
-.gallery__item-remove {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+  &:hover {
+    .gallery__image {
+      transform: scale(1.2);
+    }
+  }
 
-.gallery__item:hover .gallery__image {
-  transform: scale(1.2);
+  &--remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 .gallery__image {
@@ -21,7 +23,6 @@
   object-fit: cover;
   transition: transform 4s linear;
 }
-
 @media (max-width: 768px) {
   .gallery__item {
     width: 100%;

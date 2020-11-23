@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import "./CustomButton.css";
+import "./CustomButton.scss";
 
 const CustomButton = ({ children, type, className, variant, ...restProps }) => {
   return (

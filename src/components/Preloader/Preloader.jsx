@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./Preloader.css";
+import "./Preloader.scss";
 
 const Preloader = () => (
-  <div className="preloader-wrapper">
-    <div className="preloader"></div>
+  <div className="preloader">
+    <div className="preloader__inner"></div>
   </div>
 );
 

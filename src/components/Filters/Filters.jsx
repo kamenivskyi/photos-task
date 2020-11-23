@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import photosContext from "../../context/photosContext";
 import Pagination from "../Pagination";
 
-import "./Filters.css";
+import "./Filters.scss";
 
 const Filters = () => {
   const {

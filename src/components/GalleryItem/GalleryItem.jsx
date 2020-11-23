@@ -5,7 +5,7 @@ import photosContext from "../../context/photosContext";
 import { galleryItemShape } from "../../utils/commonPropTypes";
 import CustomButton from "../CustomButton";
 
-import "./GalleryItem.css";
+import "./GalleryItem.scss";
 
 const GalleryItem = ({ item: { download_url, id } }) => {
   const history = useHistory();
@@ -19,7 +19,7 @@ const GalleryItem = ({ item: { download_url, id } }) => {
         {isFavoritesPage && (
           <CustomButton
             variant="primary"
-            className="gallery__item-remove"
+            className="gallery__item--remove"
             label="get more details"
             onClick={(e) => handleRemoveFromFavorites(e, id)}
           >

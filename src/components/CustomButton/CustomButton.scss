@@ -1,0 +1,41 @@
+@import "../../scss/colors";
+
+.custom-button {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $white-color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+
+  &:disabled {
+    background: $white-color;
+    border: 1px solid $primary-color;
+    color: $dark-color;
+  }
+
+  &:not(:last-child) {
+    margin: 20px 10px 20px 0;
+  }
+}
+
+.button-primary {
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: $dark-color;
+  }
+}
+.button-dark {
+  background-color: $dark-color;
+  &:hover {
+    background-color: $primary-color;
+  }
+}

@@ -4,7 +4,7 @@ import Header from "../Header";
 import PhotosState from "../../context/PhotosState";
 
 import "reset-css/reset.css";
-import "./styles.css";
+import "./styles.scss";
 
 const App = () => (
   <PhotosState>

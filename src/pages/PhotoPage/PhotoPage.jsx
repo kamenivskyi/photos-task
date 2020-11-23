@@ -7,7 +7,7 @@ import photosContext from "../../context/photosContext";
 import { useAsyncData } from "../../hooks/useAsyncData";
 import { fetchStatus } from "../../utils/config";
 
-import "./PhotoPage.css";
+import "./PhotoPage.scss";
 
 const PhotoPage = () => {
   const { id } = useParams();

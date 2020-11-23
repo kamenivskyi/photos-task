@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import CustomButton from "../CustomButton";
 import { fetchStatus, paginationPage } from "../../utils/config";
-import "./Pagination.css";
+import "./Pagination.scss";
 
 const Pagination = ({ onPageChange, currentPage, status }) => {
   const { first, next, previous } = paginationPage;
