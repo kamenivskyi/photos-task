@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 
 import CustomButton from "../CustomButton";
@@ -7,7 +7,9 @@ import "./Pagination.scss";
 
 const Pagination = ({ onPageChange, currentPage, status }) => {
   const { first, next, previous } = paginationPage;
-  const isFetching = status === fetchStatus.pending;
+  const isFetching = useMemo(() => status === fetchStatus.pending, [status]);
+
+  console.log("render");
 
   return (
     <div className="pagination">
@@ -33,4 +35,4 @@ Pagination.propTypes = {
   currentPage: PropTypes.number,
 };
 
-export default Pagination;
+export default React.memo(Pagination);

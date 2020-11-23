@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useDebouncedCallback } from "use-debounce";
 
 import photosContext from "../../context/photosContext";
 import Pagination from "../Pagination";
@@ -6,13 +7,13 @@ import Pagination from "../Pagination";
 import "./Filters.scss";
 
 const Filters = () => {
-  const {
-    page,
-    status,
-    limitPerPage,
-    handlePageChange,
-    setLimitPerPage,
-  } = useContext(photosContext);
+  const { page, status, handlePageChange, setLimitPerPage } = useContext(
+    photosContext
+  );
+
+  const debounced = useDebouncedCallback((value) => {
+    setLimitPerPage(value);
+  }, 2000);
 
   return (
     <div className="filters">
@@ -26,8 +27,8 @@ const Filters = () => {
         <input
           className="limit"
           type="number"
-          value={limitPerPage}
-          onChange={(e) => setLimitPerPage(e.target.vaue)}
+          defaultValue={5}
+          onChange={(e) => debounced.callback(e.target.value)}
         />
       </label>
     </div>
