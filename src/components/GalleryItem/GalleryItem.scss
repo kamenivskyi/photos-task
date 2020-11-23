@@ -1,7 +1,7 @@
 .gallery__item {
   position: relative;
-  height: 450px;
-  width: 50%;
+  height: 300px;
+  flex-basis: 33%;
   overflow: hidden;
 
   &:hover {
@@ -25,6 +25,12 @@
 }
 @media (max-width: 768px) {
   .gallery__item {
-    width: 100%;
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  .gallery__item {
+    flex-basis: 100%;
   }
 }

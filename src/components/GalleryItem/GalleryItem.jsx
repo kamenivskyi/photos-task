@@ -13,8 +13,6 @@ const GalleryItem = ({ item: { download_url, id }, item }) => {
   const { handleRemoveFromFavorites } = usePhotosContext();
   const isFavoritesPage = history.location.pathname === "/favorites";
 
-  console.log(download_url);
-
   return (
     <article className="gallery__item">
       <Link to={`/photo/${id}`}>

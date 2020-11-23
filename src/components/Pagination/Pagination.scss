@@ -28,6 +28,9 @@
     }
 
     .custom-button {
+      &:first-child {
+        margin-bottom: 0;
+      }
       margin-right: 0;
     }
   }
