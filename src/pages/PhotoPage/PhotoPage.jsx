@@ -21,13 +21,11 @@ const PhotoPage = () => {
   const { download_url, author, width, height } = data;
   const { pending, success, failed } = fetchStatus;
 
-  console.log(status);
-
   return (
     <article className="photo-page">
       <div className="container">
-        {/* {status === pending && <Preloader />} */}
-        {status === success ? (
+        {status === pending && <Preloader />}
+        {status === success && (
           <>
             {download_url && (
               <div className="photo-page__image-wrapper">
@@ -49,8 +47,6 @@ const PhotoPage = () => {
               </CustomButton>
             </div>
           </>
-        ) : (
-          <p>Loadimg..</p>
         )}
         {status === failed && <p>Something went wrong!</p>}
       </div>

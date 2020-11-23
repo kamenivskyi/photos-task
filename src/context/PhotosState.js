@@ -4,20 +4,26 @@ import {
   DEFAULT_LIMIT_PER_PAGE,
   DEFAULT_PAGE,
   paginationPage,
+  storageTypes,
 } from "../utils/config";
 
 import PhotosContext from "./photosContext";
 
 const PhotosState = ({ children }) => {
-  const [page, setPage] = useState(DEFAULT_PAGE);
-  const [limitPerPage, setLimitPerPage] = useState(DEFAULT_LIMIT_PER_PAGE);
-  const { data, status } = useAsyncData(
-    `/v2/list?page=${page}&limit=${limitPerPage}`
-  );
+  const [page, setPage] = useStorage({
+    initialValue: DEFAULT_PAGE,
+    storageType: storageTypes.session,
+    key: "photos-app-page",
+  });
   const [favorites, setFavorites] = useStorage({
     key: "photos-app-favorites",
     initialValue: [],
   });
+  const [limitPerPage, setLimitPerPage] = useState(DEFAULT_LIMIT_PER_PAGE);
+
+  const { data, status } = useAsyncData(
+    `/v2/list?page=${page}&limit=${limitPerPage}`
+  );
 
   const handlePageChange = useCallback(
     (operation) => () => {
@@ -44,7 +50,7 @@ const PhotosState = ({ children }) => {
         }
       }
     },
-    [page]
+    [page, setPage]
   );
 
   const handleAddToFavorites = useCallback(

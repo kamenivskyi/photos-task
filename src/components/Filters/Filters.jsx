@@ -17,7 +17,7 @@ const Filters = () => {
 
   const debounced = useDebouncedCallback((value) => {
     setLimitPerPage(value);
-  }, 2000);
+  }, 1500);
 
   return (
     <div className="filters">
