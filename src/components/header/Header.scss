@@ -6,8 +6,25 @@
   margin-bottom: 20px;
 
   &__link {
+    position: relative;
     color: $white-color;
     text-transform: capitalize;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $primary-color;
+      }
+    }
 
     &:not(:last-child) {
       margin-right: 15px;

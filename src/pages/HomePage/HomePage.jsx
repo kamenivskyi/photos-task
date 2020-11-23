@@ -6,7 +6,7 @@ import Gallery from "../../components/Gallery";
 import Preloader from "../../components/Preloader";
 import { usePhotosContext } from "../../hooks";
 
-import { fetchStatus } from "../../utils/config";
+import { DEFAULT_PAGE, fetchStatus } from "../../utils/config";
 
 const HomePage = () => {
   const { data, status, page, setPage } = usePhotosContext();
@@ -28,7 +28,7 @@ const HomePage = () => {
           <>
             <p className="info-message">Photos not found!</p>
             {page !== 1 && (
-              <CustomButton onClick={() => setPage(1)}>
+              <CustomButton onClick={() => setPage(DEFAULT_PAGE)}>
                 Back to the first page
               </CustomButton>
             )}
