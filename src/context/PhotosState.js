@@ -78,6 +78,7 @@ const PhotosState = ({ children }) => {
         handlePageChange,
         setLimitPerPage,
         limitPerPage,
+        setPage,
         page,
         data,
         status,
