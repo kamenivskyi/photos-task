@@ -9,8 +9,6 @@ const Pagination = ({ onPageChange, currentPage, status }) => {
   const { first, next, previous } = paginationPage;
   const isFetching = useMemo(() => status === fetchStatus.pending, [status]);
 
-  console.log("render");
-
   return (
     <div className="pagination">
       <div className="pagination__buttons">
