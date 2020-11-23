@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 
+import CustomButton from "../../components/CustomButton";
+import Preloader from "../../components/Preloader";
 import photosContext from "../../context/photosContext";
 import { useAsyncData } from "../../hooks/useAsyncData";
 import { fetchStatus } from "../../utils/config";
-import CustomButton from "../../components/CustomButton";
 
 import "./PhotoPage.css";
 
@@ -23,7 +24,7 @@ const PhotoPage = () => {
   return (
     <article className="photo-page">
       <div className="container">
-        {status === pending && <p>Loading..</p>}
+        {status === pending && <Preloader />}
         {status === success && (
           <>
             {download_url && (

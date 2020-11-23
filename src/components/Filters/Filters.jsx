@@ -3,14 +3,24 @@ import React, { useContext } from "react";
 import photosContext from "../../context/photosContext";
 import Pagination from "../Pagination";
 
+import "./Filters.css";
+
 const Filters = () => {
-  const { page, limitPerPage, handlePageChange, setLimitPerPage } = useContext(
-    photosContext
-  );
+  const {
+    page,
+    status,
+    limitPerPage,
+    handlePageChange,
+    setLimitPerPage,
+  } = useContext(photosContext);
 
   return (
     <div className="filters">
-      <Pagination onPageChange={handlePageChange} currentPage={page} />
+      <Pagination
+        onPageChange={handlePageChange}
+        currentPage={page}
+        status={status}
+      />
       <label>
         <span className="limit-text">Limit of photos per page: </span>
         <input

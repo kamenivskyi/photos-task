@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import photosContext from "../../context/photosContext";
 
-import { GalleryItemShape } from "../../utils/commonPropTypes";
+import { galleryItemShape } from "../../utils/commonPropTypes";
 import CustomButton from "../CustomButton";
 
 import "./GalleryItem.css";
@@ -20,6 +20,7 @@ const GalleryItem = ({ item: { download_url, id } }) => {
           <CustomButton
             variant="primary"
             className="gallery__item-remove"
+            label="get more details"
             onClick={(e) => handleRemoveFromFavorites(e, id)}
           >
             Remove
@@ -31,7 +32,7 @@ const GalleryItem = ({ item: { download_url, id } }) => {
 };
 
 GalleryItem.propTypes = {
-  item: GalleryItemShape,
+  item: galleryItemShape,
 };
 
 export default GalleryItem;

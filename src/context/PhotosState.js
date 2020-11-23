@@ -41,9 +41,9 @@ const PhotosState = ({ children }) => {
   };
 
   const handleAddToFavorites = (photoObj) => {
-    const isNotUnique = favorites.find((item) => item.id === photoObj.id);
+    const hasItem = favorites.find((item) => item.id === photoObj.id);
 
-    if (!isNotUnique) {
+    if (!hasItem) {
       setFavorites([...favorites, photoObj]);
     } else {
       alert("The photo is already in the favorites!");

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const GalleryItemShape = PropTypes.shape({
+export const galleryItemShape = PropTypes.shape({
   id: PropTypes.string,
   author: PropTypes.string,
   download_url: PropTypes.string,

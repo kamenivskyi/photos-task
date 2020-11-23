@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import GalleryItem from "../GalleryItem";
-import { GalleryItemShape } from "../../utils/commonPropTypes";
+import { galleryItemShape } from "../../utils/commonPropTypes";
 import "./Gallery.css";
 
 const Gallery = ({ items }) => {
@@ -16,7 +16,7 @@ const Gallery = ({ items }) => {
 };
 
 Gallery.propTypes = {
-  items: PropTypes.arrayOf(GalleryItemShape),
+  items: PropTypes.arrayOf(galleryItemShape),
 };
 
 export default Gallery;

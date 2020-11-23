@@ -9,7 +9,11 @@ const FavoritesPage = () => {
     <section className="favorites-page">
       <div className="container">
         <h1 className="page-title">Favorites photos</h1>
-        <Gallery items={favorites} />
+        {favorites.length > 0 ? (
+          <Gallery items={favorites} />
+        ) : (
+          <p className="info-message">There are no favorite photos yet</p>
+        )}
       </div>
     </section>
   );

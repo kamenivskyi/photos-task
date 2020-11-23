@@ -3,10 +3,9 @@ import React, { useContext } from "react";
 import CustomButton from "../../components/CustomButton";
 import Filters from "../../components/Filters/Filters";
 import Gallery from "../../components/Gallery";
+import Preloader from "../../components/Preloader";
 import photosContext from "../../context/photosContext";
 import { fetchStatus } from "../../utils/config";
-
-import "./Home.css";
 
 const HomePage = () => {
   const { data, status, page, setPage } = useContext(photosContext);
@@ -21,16 +20,12 @@ const HomePage = () => {
     <main>
       <div className="container">
         <h1 className="page-title">Home page</h1>
-        {hasData && (
-          <>
-            <Filters />
-            <Gallery items={data} />
-          </>
-        )}
-        {loading && <p>Loading..</p>}
+        <Filters />
+        {hasData && <Gallery items={data} />}
+        {loading && <Preloader />}
         {noData && (
           <>
-            <p className="warning-message">Photos not found!</p>
+            <p className="info-message">Photos not found!</p>
             {page !== 1 && (
               <CustomButton onClick={() => setPage(1)}>
                 Back to the first page

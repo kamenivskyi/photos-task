@@ -1,0 +1,14 @@
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.limit-text {
+  margin-right: 15px;
+}
+
+.limit {
+  padding: 10px 20px;
+  max-height: 20px;
+}

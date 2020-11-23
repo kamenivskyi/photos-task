@@ -19,3 +19,9 @@
 .photo-page__author {
   margin: 10px;
 }
+
+@media (max-width: 600px) {
+  .photo-page__content {
+    flex-direction: column;
+  }
+}

@@ -3,17 +3,29 @@
   padding: 10px 20px;
   font-size: 14px;
   text-transform: uppercase;
-  background-color: var(--dark-color);
+  /* background-color: var(--dark-color); */
   color: var(--white-color);
   border: none;
   cursor: pointer;
 }
 
+.button-dark,
+.button-primary {
+  transition: background 0.4s ease;
+}
+
 .button-primary {
   background-color: var(--primary-color);
 }
+.button-primary:hover {
+  background-color: var(--dark-color);
+}
+
 .button-dark {
   background-color: var(--dark-color);
+}
+.button-dark:hover {
+  background-color: var(--primary-color);
 }
 
 .custom-button:not(:last-child) {
