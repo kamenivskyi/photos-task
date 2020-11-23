@@ -30,6 +30,8 @@ CustomButton.propTypes = {
     PropTypes.node,
   ]),
   type: PropTypes.string,
+  variant: PropTypes.string,
+  className: PropTypes.string,
 };
 
 CustomButton.defaultProps = {

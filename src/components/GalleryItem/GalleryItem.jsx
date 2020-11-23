@@ -8,21 +8,21 @@ import { getSmallImageUrl } from "../../utils/helpers";
 
 import "./GalleryItem.scss";
 
-const GalleryItem = ({ item: { download_url, id }, item }) => {
+const GalleryItem = ({ item }) => {
   const history = useHistory();
   const { handleRemoveFromFavorites } = usePhotosContext();
   const isFavoritesPage = history.location.pathname === "/favorites";
 
   return (
     <article className="gallery__item">
-      <Link to={`/photo/${id}`}>
+      <Link to={`/photo/${item.id}`}>
         <img className="gallery__image" src={getSmallImageUrl(item)} alt="" />
         {isFavoritesPage && (
           <CustomButton
             variant="primary"
             className="gallery__item--remove"
             label="get more details"
-            onClick={(e) => handleRemoveFromFavorites(e, id)}
+            onClick={(e) => handleRemoveFromFavorites(e, item.id)}
           >
             Remove
           </CustomButton>
