@@ -18,3 +18,6 @@ export const storageTypes = {
 
 export const DEFAULT_PAGE = 1;
 export const DEFAULT_LIMIT_PER_PAGE = 6;
+
+export const HEIGHT_SMALL = 300;
+export const WIDTH_SMALL = 300;

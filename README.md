@@ -1,6 +1,7 @@
 # Используемый стек технологий:
 
 - React.js(ReactHooks)
+- use-debounce
 - react-router
 - create-react-app
 - SCSS
