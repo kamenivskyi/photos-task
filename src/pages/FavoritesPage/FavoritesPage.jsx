@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import Gallery from "../../components/Gallery";
-import photosContext from "../../context/photosContext";
+import { usePhotosContext } from "../../hooks";
 
 const FavoritesPage = () => {
-  const { favorites } = useContext(photosContext);
+  const { favorites } = usePhotosContext();
 
   return (
     <section className="favorites-page">

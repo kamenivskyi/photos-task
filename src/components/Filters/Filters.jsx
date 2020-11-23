@@ -1,16 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useDebouncedCallback } from "use-debounce";
 
-import photosContext from "../../context/photosContext";
-import { DEFAULT_LIMIT_PER_PAGE } from "../../utils/config";
 import Pagination from "../Pagination";
+import { usePhotosContext } from "../../hooks";
+import { DEFAULT_LIMIT_PER_PAGE } from "../../utils/config";
 
 import "./Filters.scss";
 
 const Filters = () => {
-  const { page, status, handlePageChange, setLimitPerPage } = useContext(
-    photosContext
-  );
+  const {
+    page,
+    status,
+    handlePageChange,
+    setLimitPerPage,
+  } = usePhotosContext();
 
   const debounced = useDebouncedCallback((value) => {
     setLimitPerPage(value);

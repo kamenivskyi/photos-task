@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import photosContext from "../../context/photosContext";
+import { usePhotosContext } from "../../hooks";
 
 import { galleryItemShape } from "../../utils/commonPropTypes";
 import CustomButton from "../CustomButton";
@@ -9,7 +9,7 @@ import "./GalleryItem.scss";
 
 const GalleryItem = ({ item: { download_url, id } }) => {
   const history = useHistory();
-  const { handleRemoveFromFavorites } = useContext(photosContext);
+  const { handleRemoveFromFavorites } = usePhotosContext();
   const isFavoritesPage = history.location.pathname === "/favorites";
 
   return (

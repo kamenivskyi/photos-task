@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import CustomButton from "../../components/CustomButton";
 import Filters from "../../components/Filters/Filters";
 import Gallery from "../../components/Gallery";
 import Preloader from "../../components/Preloader";
-import photosContext from "../../context/photosContext";
+import { usePhotosContext } from "../../hooks";
+
 import { fetchStatus } from "../../utils/config";
 
 const HomePage = () => {
-  const { data, status, page, setPage } = useContext(photosContext);
+  const { data, status, page, setPage } = usePhotosContext();
 
   const { success, pending, failed } = fetchStatus;
   const hasData = data && data.length > 0;

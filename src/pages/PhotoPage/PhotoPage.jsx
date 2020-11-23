@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 import CustomButton from "../../components/CustomButton";
 import Preloader from "../../components/Preloader";
-import photosContext from "../../context/photosContext";
 import { useAsyncData } from "../../hooks/useAsyncData";
+import { usePhotosContext } from "../../hooks";
 import { fetchStatus } from "../../utils/config";
 
 import "./PhotoPage.scss";
@@ -12,7 +12,7 @@ import "./PhotoPage.scss";
 const PhotoPage = () => {
   const { id } = useParams();
   const { data, status } = useAsyncData(`/id/${id}/info`);
-  const { handleAddToFavorites } = useContext(photosContext);
+  const { handleAddToFavorites } = usePhotosContext();
 
   if (!data) {
     return null;
