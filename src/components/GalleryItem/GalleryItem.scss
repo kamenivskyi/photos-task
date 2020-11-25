@@ -1,16 +1,13 @@
+@import "../../scss/colors";
+
 .gallery__item {
   position: relative;
   height: 300px;
   flex-basis: 33%;
   overflow: hidden;
 
-  &:hover {
-    .gallery__image {
-      transform: scale(1.2);
-    }
-  }
-
-  &--remove {
+  &--remove,
+  &--add {
     position: absolute;
     right: 0;
     top: 0;
@@ -22,6 +19,10 @@
   height: 100%;
   object-fit: cover;
   transition: transform 4s linear;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 @media (max-width: 768px) {
   .gallery__item {

@@ -54,7 +54,9 @@ const PhotosState = ({ children }) => {
   );
 
   const handleAddToFavorites = useCallback(
-    (photoObj) => {
+    (e, photoObj) => {
+      e.preventDefault();
+
       const hasItem = favorites.find((item) => item.id === photoObj.id);
 
       if (!hasItem) {

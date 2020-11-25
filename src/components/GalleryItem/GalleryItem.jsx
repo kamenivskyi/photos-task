@@ -9,9 +9,13 @@ import { getSmallImageUrl } from "../../utils/helpers";
 import "./GalleryItem.scss";
 
 const GalleryItem = ({ item }) => {
-  const history = useHistory();
-  const { handleRemoveFromFavorites } = usePhotosContext();
-  const isFavoritesPage = history.location.pathname === "/favorites";
+  const { location } = useHistory();
+  const {
+    handleRemoveFromFavorites,
+    handleAddToFavorites,
+  } = usePhotosContext();
+  const isFavoritesPage = location.pathname === "/favorites";
+  const isHomePage = location.pathname === "/";
 
   return (
     <article className="gallery__item">
@@ -21,10 +25,19 @@ const GalleryItem = ({ item }) => {
           <CustomButton
             variant="primary"
             className="gallery__item--remove"
-            label="get more details"
+            label="remove from favorites"
             onClick={(e) => handleRemoveFromFavorites(e, item.id)}
           >
             Remove
+          </CustomButton>
+        )}
+        {isHomePage && (
+          <CustomButton
+            className="gallery__item--add"
+            label="add to favorites"
+            onClick={(e) => handleAddToFavorites(e, item)}
+          >
+            Add to Favorites
           </CustomButton>
         )}
       </Link>
